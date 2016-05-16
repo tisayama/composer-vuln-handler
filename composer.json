@@ -1,0 +1,24 @@
+{
+  "name": "tette/composer-vuln-handler",
+  "type": "composer-plugin",
+  "require": {
+    "composer-plugin-api": "^1.0"
+  },
+  "require-dev": {
+    "composer/composer": "~1.1"
+  },
+  "authors": [
+    {
+      "name": "Teppei ISAYAMA",
+      "email": "isayama.fe@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CPEBach\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "CPEBach\\Composer\\VulnHandlerPlugin"
+  }
+}
