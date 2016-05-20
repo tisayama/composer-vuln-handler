@@ -1,8 +1,9 @@
 {
-  "name": "tette/composer-vuln-handler",
+  "name": "tisayama/composer-vuln-handler",
   "type": "composer-plugin",
   "require": {
-    "composer-plugin-api": "^1.0"
+    "composer-plugin-api": "^1.0",
+    "ext-curl": "*"
   },
   "require-dev": {
     "composer/composer": "~1.1"
