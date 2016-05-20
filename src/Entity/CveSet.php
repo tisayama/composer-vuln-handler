@@ -11,7 +11,7 @@ namespace CPEBach\Entity;
 
 use Traversable;
 
-class CveSet implements \IteratorAggregate
+class CveSet implements \IteratorAggregate, \Countable
 {
 
 
@@ -63,7 +63,6 @@ class CveSet implements \IteratorAggregate
             ) {
 
 
-
                 $cveEntity = new Cve($name, $summary);
 
                 if (isset($cve['cvss_v2_score'])
@@ -73,13 +72,32 @@ class CveSet implements \IteratorAggregate
                     $cveEntity->setCvssV2Score($v2Score);
                 }
 
-                $this->cves->append($cveEntity);
+                if (isset($cve['reference_url'])
+                    && $cve['reference_url']
+                ) {
+                    $cveEntity->setReferenceUrl($cve['reference_url']);
+                }
 
+                $this->cves->append($cveEntity);
 
 
             }
 
         }
 
+    }
+
+    /**
+     * Count elements of an object
+     * @link http://php.net/manual/en/countable.count.php
+     * @return int The custom count as an integer.
+     * </p>
+     * <p>
+     * The return value is cast to an integer.
+     * @since 5.1.0
+     */
+    public function count()
+    {
+        return count($this->cves);
     }
 }

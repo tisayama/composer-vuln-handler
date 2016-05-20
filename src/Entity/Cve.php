@@ -18,8 +18,12 @@ class Cve
 
     protected $cvssV2Score;
 
+    protected $referenceUrl;
+
     public function __construct($cveName, $summary)
     {
+        $this->cveName = $cveName;
+        $this->summary = $summary;
     }
 
     /**
@@ -68,6 +72,22 @@ class Cve
     public function setCvssV2Score($cvssV2Score)
     {
         $this->cvssV2Score = $cvssV2Score;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getReferenceUrl()
+    {
+        return $this->referenceUrl;
+    }
+
+    /**
+     * @param string|null $referenceUrl
+     */
+    public function setReferenceUrl($referenceUrl)
+    {
+        $this->referenceUrl = $referenceUrl;
     }
 
 
