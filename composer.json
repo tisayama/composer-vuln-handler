@@ -6,7 +6,8 @@
     "ext-curl": "*"
   },
   "require-dev": {
-    "composer/composer": "~1.1"
+    "composer/composer": "~1.1",
+    "phpunit/phpunit": "~5.3"
   },
   "authors": [
     {
